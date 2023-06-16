@@ -1,0 +1,68 @@
+\documentclass{ITESO-Prereporte}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[sfdefault]{carlito}
+\usepackage{csquotes}
+\usepackage[style=apa, backend=biber]{biblatex}
+\usepackage{lipsum}
+\usepackage{tikz}
+
+\addbibresource{biblio.bib}
+\addto\captionsspanish{\renewcommand*{\contentsname}{\color{azuliteso1}\large\bfseries Tabla de contenidos}} % Cambiar el título de \tableofcontents
+
+\dpto{Departamento de Procesos Tecnológicos e Industriales}{DPTI}
+\numlab{NN}
+\profesor{El Nombre del Profe}
+\periodo{Otoño}{2022}
+
+\title{Título del reporte de laboratorio, con incluso en \textit{itálicas} para latín}
+\author{Roberto Olvera-Hernández}
+\authexp{ib721045}
+\date{\today}
+
+\mylab{El laboratorio}{Código}
+
+\begin{document}
+
+\maketitlepage
+\nocite{*} % Solo para imprimir bibliografía sin escribir (\parencite{}).
+
+%%% Inicio del documento
+\newpage{\huge\bfseries\color{gray} Pre-reporte}
+
+\question{Esta es la primera pregunta del documento}
+\lipsum[1]
+
+\question{Y esta es otra pregunta}
+\lipsum[2]
+
+\newpage{\huge\bfseries\color{gray} Diagrama de flujo}
+
+\tikzstyle{process} = [rectangle, very thick, rounded corners, minimum width=3cm, minimum height=1cm,text centered, text width=3cm, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, aspect=1.5, text centered, text width=2.5cm, draw=black, fill=yellow!25]
+
+\section{Construcción del puente salino}
+
+\begin{center}
+  \begin{tikzpicture}
+      % Proceso opcional
+      \node (op01) [process] {Pesar 48g de agarosa y 16g de KCl};
+      \node (op02) [process,  below of=op01, yshift=-1.5cm] {Diluir en 400mL en un vaso de precipitado};
+      \node (op03) [process,  right of=op02, xshift=3cm] {Cortar tubos de plástico de 5cm de largo};
+      \node (op04) [process,  right of=op03, xshift=3cm] {Rellenar con agarosa previamente preparada};
+      \node (op05) [process,  right of=op04, xshift=3cm] {Dejar reposar $\times$ 10min};
+
+      % Conexiones
+      \draw [-stealth, very thick] (op01) -- (op02);
+      \draw [-stealth, very thick] (op02) -- (op03);
+      \draw [-stealth, very thick] (op03) -- (op04);
+      \draw [-stealth, very thick] (op04) -- (op05);
+  \end{tikzpicture}
+\end{center} % Diagrama de flujo 01
+
+
+\newpage\printbibliography[title=Referencias citadas]
+
+
+
+\end{document}

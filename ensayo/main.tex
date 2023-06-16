@@ -1,0 +1,37 @@
+\documentclass{ITESO-Ensayo}
+\usepackage[spanish]{babel}
+\usepackage[sfdefault]{carlito}
+\usepackage{csquotes}
+\usepackage[style=apa, backend=biber]{biblatex}
+    \DefineBibliographyStrings{spanish}{% Cambiado "et al." a italicas
+    andothers = {\em et\addabbrvspace al\adddot}
+    }
+\usepackage{lipsum}
+
+\addbibresource{biblio.bib}
+\addto\captionsspanish{\renewcommand*{\contentsname}{\color{azuliteso1}\Large\bfseries Tabla de contenidos}} % Cambiar el título de \tableofcontents
+
+\newcommand{\toprow}[1]{\multicolumn{1}{c}{\textbf{#1}}}
+
+\title{Un título mamalón para el ensayo}
+
+\author[a]{Roberto Olvera-Hernández} % Autor principal siempre va a al inicio.
+\date{} % Se recomienda dejar vacío para no imprimir la fecha en la zona de título.
+
+\mainemail{ib721045@iteso.mx} % E-mail de autor(a) principal.
+\curso{Materia}{XXXYYYYZ} % Nombre del laboratorio
+
+\affil[a]{Ingeniería en biotecnología, \itesoinfo}
+
+\begin{document}
+
+\maketitle % Imprimir título.
+    \nocite{*} % Solo para imprimir bibliografía sin escribir (\parencite{}).
+    \thispagestyle{firstpage} % Definir encabezado de la primera página.
+
+%%% Inicio del documento
+
+
+\printbibliography[title=Referencias citadas]
+
+\end{document}
