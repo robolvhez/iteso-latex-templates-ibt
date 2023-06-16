@@ -1,0 +1,7 @@
+# Files to be ignored in this repository
+*/build
+*/figuras
+*/*.pdf
+*.png
+*.jpg
+*.bib
