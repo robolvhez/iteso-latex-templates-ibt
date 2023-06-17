@@ -1,7 +1,3 @@
-# Files to be ignored in this repository
+# Ignoring build temproray files from compilation.
 */build
-*/figuras
-*/*.pdf
-*.png
-*.jpg
-*.bib
+
